@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SolidPrinc
+{
+    abstract class PaymentDetails
+    {
+        public double AmountPaid { get; set; }
+        private double TollFee { get; set; }
+        public abstract double CalcBalance();
+    }
+    internal class MemberFee
+    {
+        double TotalMemberBalance(List<PaymentDetails>Keke) //Question
+        {
+            try
+            {
+                double total = 0;
+
+                foreach (var MemberFee in MemberFee)
+                {
+                    total = MemberFee.CalcBalance();
+
+                }
+
+                return total;
+
+            }
+            catch (Exception  ex)
+            {
+
+                return 0;
+            }
+        }
+    }
+
+    internal class Keke : PaymentDetails  //extension cclass as it is used as a parameter inCustomeronboarding class
+    {
+        public double AmountPaid { get; set; }
+        private double TollFee { get; set; }
+        public override double CalcBalance()
+        {
+            return AmountPaid;
+        }
+    }
+
+    internal class Bus : PaymentDetails  //extension class as it is used as a parameter in Payment class
+    {
+        public double AmountPaid { get; set; }
+        private double TollFee { get; set; }
+        public override double CalcBalance()
+        {
+            return AmountPaid;
+        }
+    }
+
+    internal class Taxi : PaymentDetails //extension class as it is used as a parameter Payment class
+    {
+        public double AmountPaid { get; set; }
+        private double TollFee { get; set; }
+        public override double CalcBalance()
+        {
+            return AmountPaid;
+        } 
+    }
+
+
+
+}
+
